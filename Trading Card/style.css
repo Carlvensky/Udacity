@@ -1,7 +1,8 @@
 .container {
     width: 300px;
     border : 3px solid rgb(9, 7, 7);
-    padding: 10px; 
+    padding: 10px;
+    box-shadow: 2px 1px blue; 
 }
 
 .info{
