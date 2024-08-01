@@ -1,0 +1,26 @@
+.container {
+    width: 300px;
+    border : 3px solid rgb(9, 7, 7);
+    padding: 10px; 
+}
+
+.info{
+    font-style: italic;
+}
+
+.infor{
+    border : 2px solid rgb(0, 0, 0);
+    margin-top: 10px;
+    padding: 5px;
+    }
+
+li{
+    list-style: none;
+}
+ul{
+    padding-left: 5px;
+}
+
+img{
+    width: 300px;
+}
