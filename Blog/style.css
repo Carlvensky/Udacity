@@ -74,3 +74,14 @@ footer {
    width: 100%;
    bottom: 0;
 }
+
+@media screen and (max-width: 600px) {
+   
+   .navbar {
+      width: 100%;
+   }
+   .bottom {
+      grid-template-columns: 100%;
+   }
+   
+}
