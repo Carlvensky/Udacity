@@ -1,5 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=GFS+Neohellenic:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kalnia+Glaze:wght@100..700&display=swap');
+
 body {
-   font-family: Arial, sans-serif;
+   font-family: "GFS Neohellenic", Arial, sans-serif;
    margin: 0;
    padding: 0;
    
@@ -76,11 +80,16 @@ footer {
    padding: 10px 0;
    width: 100%;
    bottom: 0;
+   font-family: Caveat;
 }
 .title {
    text-align: center;
    margin-bottom: 20px;
    color: black;
+}
+
+h1, h2, .title {
+   font-family: Kalnia Glaze;
 }
 
 @media screen and (max-width: 600px) {
