@@ -1,4 +1,6 @@
-@import url(style.css);
+@import url(/Blog/Assets/CSS/style.css);
+@import url(Assets/CSS/footer.css);
+@import url(/Blog/Assets/CSS/sharing.css);
 
 .author-name {
     display: flex;
