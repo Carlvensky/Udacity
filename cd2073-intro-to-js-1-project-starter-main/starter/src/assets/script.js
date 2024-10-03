@@ -1,5 +1,9 @@
 /* Create an array named products which you will use to add all of your product object literals that you create in the next step. */
-const products = [];
+const products = [
+  { name: "cherry", price: 1.99, quantity: 0, productId: 1, image: "images/cherry.jpg" },
+  { name: "orange", price: 2.99, quantity: 0, productId: 2, image: "images/orange.jpg" },
+  { name: "strawberry", price: 3.99, quantity: 0, productId: 3, image: "images/strawberry.jpg" }
+];
 
 /* Create 3 or more product objects using object literal notation 
    Each product should include five properties
@@ -9,12 +13,6 @@ const products = [];
    - productId: unique id for the product (number)
    - image: picture of product (url string)
 */
-const product = [
-  { name: "cherry", price: 1.99, quantity: 0, productId: 1, image: "images/cherry.jpg" },
-  { name: "orange", price: 2.99, quantity: 0, productId: 2, image: "images/orange.jpg" },
-  { name: "strawberry", price: 3.99, quantity: 0, productId: 3, image: "images/strawberry.jpg" }
-];
-products.push(...product);
 
 /* Images provided in /images folder. All images from Unsplash.com
    - cherry.jpg by Mae Mu
@@ -104,7 +102,19 @@ function emptyCart() {
   Hint: cartTotal function gives us cost of all the products in the cart  
 */
 function pay(amount) {
-  return amount - cartTotal();
+  //add the current payment amount to the total paid variables
+  let totalPaid = amount;
+  //calculate the difference between the total paid and the total cost of the cart
+  let remaining = totalPaid - cartTotal();
+  
+  //Check if the money can cover everything in the cart
+  if (remaining >= 0) {
+    //if so reset the totalpaid to zero and empty the cart
+    totalPaid = 0;
+    emptyCart();
+  }
+  //return the change to the customer (negative if there is a remaining balance)
+  return remaining;
 }
 
 //try adding a curency converter
