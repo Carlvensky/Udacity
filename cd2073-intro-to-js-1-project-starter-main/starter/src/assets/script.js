@@ -1,8 +1,8 @@
 /* Create an array named products which you will use to add all of your product object literals that you create in the next step. */
 const products = [
-  { name: "cherry", price: 1.99, quantity: 0, productId: 1, image: "images/cherry.jpg" },
-  { name: "orange", price: 2.99, quantity: 0, productId: 2, image: "images/orange.jpg" },
-  { name: "strawberry", price: 3.99, quantity: 0, productId: 3, image: "images/strawberry.jpg" }
+  { name: "cherry", price: 2.00, quantity: 0, productId: 1, image: "images/cherry.jpg" },
+  { name: "orange", price: 3.00, quantity: 0, productId: 2, image: "images/orange.jpg" },
+  { name: "strawberry", price: 4.00, quantity: 0, productId: 3, image: "images/strawberry.jpg" }
 ];
 
 /* Create 3 or more product objects using object literal notation 
@@ -28,6 +28,8 @@ const cart = [];
   - addProductToCart should then increase the product's quantity
   - if the product is not already in the cart, add it to the cart
 */
+
+//the function checks if the product is already in the cart, if it is, it increases the quantity, if not, it adds the product to the cart
 function addProductToCart(productId) {
   const product = products.find(product => product.productId === productId);
   if (product) {
@@ -42,6 +44,7 @@ function addProductToCart(productId) {
   - increaseQuantity should get the correct product based on the productId
   - increaseQuantity should then increase the product's quantity
 */
+// this function increases the quantity of the product
 function increaseQuantity(productId) {
   const product = products.find(product => product.productId === productId);
   if (product) {
@@ -54,6 +57,7 @@ function increaseQuantity(productId) {
   - decreaseQuantity should decrease the quantity of the product
   - if the function decreases the quantity to 0, the product is removed from the cart
 */
+//this function decreases the quantity of the product
 function decreaseQuantity(productId) {
   const product = products.find(product => product.productId === productId);
   if (product) {
@@ -85,6 +89,8 @@ function removeProductFromCart(productId) {
   - cartTotal should return the total cost of the products in the cart
   Hint: price and quantity can be used to determine total cost
 */
+
+//this function calculates the total cost of all the products in the cart
 function cartTotal() {
   return cart.reduce((total, product) => total + product.price * product.quantity, 0);
 }
@@ -101,9 +107,13 @@ function emptyCart() {
   - pay will return a positive number if money should be returned to customer
   Hint: cartTotal function gives us cost of all the products in the cart  
 */
+// to keep track of the total amount paid
+let totalPaid = 0;
+
 function pay(amount) {
   //add the current payment amount to the total paid variables
-  let totalPaid = amount;
+  totalPaid += amount;
+  
   //calculate the difference between the total paid and the total cost of the cart
   let remaining = totalPaid - cartTotal();
   
